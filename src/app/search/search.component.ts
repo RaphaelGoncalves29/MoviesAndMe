@@ -1,63 +1,65 @@
-import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { SearchService } from '../services/search.service';
-import { Movie } from '../models/movie.model';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit } from "@angular/core";
+import { Subscription } from "rxjs";
+import { SearchService } from "../services/search.service";
+import { Movie } from "../models/movie.model";
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 
 @Component({
-  selector: 'app-search',
-  templateUrl: './search.component.html',
-  styleUrls: ['./search.component.scss']
+  selector: "app-search",
+  templateUrl: "./search.component.html",
+  styleUrls: ["./search.component.scss"],
 })
 export class SearchComponent implements OnInit {
-
-  data:any = []
+  movies: any = [];
+  tvShows: any = [];
   movieForm: FormGroup;
+  tvForm: FormGroup;
+  movieClick: boolean;
 
-  movies: Movie[];
-  title = 'image-gallery';
+  constructor(
+    private searchService: SearchService,
+    private formBuilder: FormBuilder
+  ) {}
 
-  movieTest: any[];
-  moviesSubscription: Subscription;
-
-  constructor(private searchService: SearchService, private formBuilder: FormBuilder) { }
-
-  ngOnInit()  {
-    this.initForm();
+  ngOnInit() {
+    this.initMovieForm();
+    this.initTvForm();
+    this.movieClick = true;
   }
 
-  // getData() {
-  //   // const url ='https://jsonplaceholder.typicode.com/users'
-  //   // const url = 'https://api.themoviedb.org/3/search/movie?api_key=cd82f2654fe7cc3daa90f58e0d9de9f9&language=fr&query=star wars'
-  //   // this.http.get(url).subscribe((res)=>{
-  //   //   this.data = res
-  //   // console.log('oucou')
-  //   //  console.log(this.data)
-  // //  })
-    
-  // }
-
-  // getData() {
-  //   this.searchService.getSearch()
-  //     .subscribe( res => this.data = res)
-
-  //   console.log('getData')
-  //   console.log(this.data)
-  // }
-
-  initForm() {
+  initMovieForm() {
     this.movieForm = this.formBuilder.group({
+      title: ['', Validators.required],
+    });
+  }
+
+  initTvForm() {
+    this.tvForm = this.formBuilder.group({
       title: ['', Validators.required]
     })
   }
 
-  submitForm() {
+  submitMovieForm() {
     const formValue = this.movieForm.value;
     const movieSearch = formValue['title'];
-    console.log(movieSearch)
 
-    this.searchService.searchTest(movieSearch)
-      .subscribe( res => this.data = res)
+    this.searchService
+      .searchMovie(movieSearch)
+      .subscribe((res) => (this.movies = res));
   }
 
+  submitTvForm() {
+    console.log('ok')
+    const formValue = this.tvForm.value;
+    const tvSearch = formValue['title'];
+
+    this.searchService
+      .searchTvShow(tvSearch)
+      .subscribe((res) => (this.tvShows = res));
+  }
+
+
+  clickItem() {
+    this.movieClick = !this.movieClick;
+  }
 }

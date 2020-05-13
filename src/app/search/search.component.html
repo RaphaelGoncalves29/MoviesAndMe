@@ -1,19 +1,37 @@
-<!-- <button (click)="searchMovies()">test</button> -->
+<br>
+<div>
+    <button type="button" class="btn btn-danger" (click)='clickItem()' *ngIf='!movieClick'>Looking for movies ?</button>
+    <button type="button" class="btn btn-warning" (click)='clickItem()' *ngIf='movieClick'>Looking for tv shows
+        ?</button>
+</div>
+<br>
+<div *ngIf='movieClick'>
 
-<!-- <h2 *ngIf="movieTest">Nbr results {{ movieTest.total_results }}</h2>-->
-<!-- <button (click)="getData()">Fetch Data</button>
+    <form class="form-inline" [formGroup]="movieForm" (ngSubmit)="submitMovieForm()">
+        <div class="form-group mx-sm-3 mb-2">
+            <input type="text" id="title" class="form-control form-control-lg" formControlName="title"
+                placeholder="Search for a movie">
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="movieForm.invalid">Search</button>
+    </form>
+    <div *ngFor="let movie of movies.results" style="text-align:center">
+        <h3>
+            {{ movie.title }}
+        </h3>
+    </div>
+</div>
 
-
-<div *ngFor="let d of data.results" style="text-align:center">
-    <h3>
-        {{ d.title }}
-    </h3> -->
-
-<form [formGroup]="movieForm" (ngSubmit)="submitForm()">
-    <input type="text" id="title" class="form-control" formControlName="title" placeholder="Search for a movie"> 
-    <button type="submit" [disabled]="movieForm.invalid">Search</button>
-</form>
-<div *ngFor="let d of data.results" style="text-align:center">
-    <h3>
-        {{ d.title }}
-</h3>
+<div *ngIf='!movieClick'>
+    <form class="form-inline" [formGroup]="tvForm" (ngSubmit)="submitTvForm()">
+        <div class="form-group mx-sm-3 mb-2">
+            <input type="text" id="title" class="form-control form-control-lg" formControlName="title"
+                placeholder="Search for a tv show">
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="tvForm.invalid">Search</button>
+    </form>
+    <div *ngFor="let tv of tvShows.results" style="text-align:center">
+        <h3>
+            {{ tv.name }}
+        </h3>
+    </div>
+</div>
