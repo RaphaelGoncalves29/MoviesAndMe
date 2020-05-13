@@ -1,1 +1,19 @@
-<p>search works!</p>
+<!-- <button (click)="searchMovies()">test</button> -->
+
+<!-- <h2 *ngIf="movieTest">Nbr results {{ movieTest.total_results }}</h2>-->
+<!-- <button (click)="getData()">Fetch Data</button>
+
+
+<div *ngFor="let d of data.results" style="text-align:center">
+    <h3>
+        {{ d.title }}
+    </h3> -->
+
+<form [formGroup]="movieForm" (ngSubmit)="submitForm()">
+    <input type="text" id="title" class="form-control" formControlName="title" placeholder="Search for a movie"> 
+    <button type="submit" [disabled]="movieForm.invalid">Search</button>
+</form>
+<div *ngFor="let d of data.results" style="text-align:center">
+    <h3>
+        {{ d.title }}
+</h3>
