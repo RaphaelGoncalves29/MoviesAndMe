@@ -1,6 +1,7 @@
-export class Movie {
+export class TvShow {
     id: number;
     vote_average: number;
-    title: string;
+    name: string;
     release_date: string;
+    first_air_date: Date
 }

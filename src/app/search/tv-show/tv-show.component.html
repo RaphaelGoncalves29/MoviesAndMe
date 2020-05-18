@@ -1,0 +1,18 @@
+<div>
+    <form class="form-inline" [formGroup]="tvForm" (ngSubmit)="submitForm()">
+      <div class="form-group mx-sm-3 mb-2">
+        <input type="text" id="title" class="form-control form-control-lg" formControlName="title"
+          placeholder="Search for a Tv Show">
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="tvForm.invalid">Search</button>
+    </form>
+    <div *ngFor="let tv of tvShows" style="text-align:center">
+      <h3>
+        {{ tv.name }}
+      </h3>
+      <div *ngIf="tv.poster_path">
+        <img src="https://image.tmdb.org/t/p/w200/{{tv.poster_path}}" alt="..." class="img-thumbnail">
+      </div>
+    </div>
+  </div>
+  

@@ -1,8 +1,7 @@
 <br>
-<div>
+<div class="search-buttons">
     <button type="button" class="btn btn-danger" (click)='clickItem()' *ngIf='!movieClick'>Looking for movies ?</button>
-    <button type="button" class="btn btn-warning" (click)='clickItem()' *ngIf='movieClick'>Looking for tv shows
-        ?</button>
+    <button type="button" class="btn btn-warning" (click)='clickItem()' *ngIf='movieClick'>Looking for tv shows?</button>
 </div>
 <br>
 <div *ngIf='movieClick'>
@@ -14,10 +13,13 @@
         </div>
         <button type="submit" class="btn btn-primary" [disabled]="movieForm.invalid">Search</button>
     </form>
-    <div *ngFor="let movie of movies.results" style="text-align:center">
+    <div *ngFor="let movie of movies" style="text-align:center">
         <h3>
             {{ movie.title }}
         </h3>
+        <div *ngIf="movie.poster_path">
+            <img src="https://image.tmdb.org/t/p/w200/{{movie.poster_path}}" alt="..." class="img-thumbnail">
+        </div>
     </div>
 </div>
 
@@ -29,9 +31,12 @@
         </div>
         <button type="submit" class="btn btn-primary" [disabled]="tvForm.invalid">Search</button>
     </form>
-    <div *ngFor="let tv of tvShows.results" style="text-align:center">
+    <div *ngFor="let tv of tvShows" style="text-align:center">
         <h3>
             {{ tv.name }}
         </h3>
+        <div *ngIf="tv.poster_path">
+            <img src="https://image.tmdb.org/t/p/w200/{{tv.poster_path}}" alt="..." class="img-thumbnail">
+        </div>
     </div>
 </div>

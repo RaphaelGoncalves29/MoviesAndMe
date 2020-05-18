@@ -46,6 +46,9 @@ export class SearchComponent implements OnInit {
     this.searchService
       .searchMovie(movieSearch)
       .subscribe((res) => (this.movies = res));
+
+    console.log('coucou')
+    console.log(this.movies) 
   }
 
   submitTvForm() {

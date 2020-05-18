@@ -1,7 +1,9 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { Subject, Observable } from "rxjs";
+import { Subject, Observable, pipe } from "rxjs";
 import { Movie } from "../models/movie.model";
+import { map } from "rxjs/operators";
+import { TvShow } from '../models/tvShow.models';
 
 @Injectable({
   providedIn: "root",
@@ -11,21 +13,24 @@ export class SearchService {
 
   constructor(private httpClient: HttpClient) {}
 
-  searchMovie(title) {
-    return this.httpClient.get(
-      "https://api.themoviedb.org/3/search/movie?api_key=" +
-        this.token +
-        "&language=fr&query=" +
-        title
-    );
+  searchMovie(title): Observable<Movie[]> {
+    return this.httpClient
+    .get<Movie[]>(
+        "https://api.themoviedb.org/3/search/movie?api_key=" +
+          this.token +
+          "&language=fr&query=" +
+          title
+      )
+      .pipe(map((response: any) => response.results));
   }
 
-  searchTvShow(title) {
-    return this.httpClient.get(
+  searchTvShow(title): Observable<TvShow[]> {
+    return this.httpClient.get<TvShow[]>(
       "https://api.themoviedb.org/3/search/tv?api_key=" +
         this.token +
         "&language=fr&query=" +
         title
-    );
+    )
+    .pipe(map((response: any) => response.results));
   }
 }
