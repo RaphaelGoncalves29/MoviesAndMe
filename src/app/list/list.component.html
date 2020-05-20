@@ -1,1 +1,22 @@
-<p>list works!</p>
+<div class="list">
+    <div class="list-img">
+        <img src="https://image.tmdb.org/t/p/w200/{{moviePoster}}" alt="...">
+    </div>
+    <div class="list-content">
+        <div class="list-title">
+            <h4>{{movieTitle}}</h4>
+            <h5>{{movieVote}}</h5>
+        </div>
+        <div class="list-date">
+            <p>
+                {{movieDate | date: 'dd MMMM, y' }}
+            </p>
+        </div>
+        <div>
+            <p>{{movieText | slice:0:300 }}...</p>
+        </div>
+        <div class="list-button">
+            <button type="button" class="btn btn-primary">Add</button>
+        </div>
+    </div>
+</div>

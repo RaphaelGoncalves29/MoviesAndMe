@@ -6,12 +6,21 @@
     </div>
     <button type="submit" class="btn btn-primary" [disabled]="movieForm.invalid">Search</button>
   </form>
-  <div *ngFor="let movie of movies" style="text-align:center">
+  <!-- <div *ngFor="let movie of movies" style="text-align:center">
     <h3>
       {{ movie.title }}
     </h3>
     <div *ngIf="movie.poster_path">
       <img src="https://image.tmdb.org/t/p/w200/{{movie.poster_path}}" alt="..." class="img-thumbnail">
     </div>
-  </div>
+  </div> -->
+  <app-list *ngFor="let movie of movies; let i = index"
+  [indexOfMovie]="i"
+  [movieTitle]="movie.title"
+  [movieVote]="movie.vote_average"
+  [movieDate]="movie.release_date"
+  [moviePoster]="movie.poster_path"
+  [movieText]="movie.overview"
+  >
+  </app-list>
 </div>
