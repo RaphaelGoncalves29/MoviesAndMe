@@ -1,7 +1,15 @@
 <div class="list">
-    <div class="list-img">
+    <div class="list-img" *ngIf="moviePoster; else notFound">
         <img src="https://image.tmdb.org/t/p/w200/{{moviePoster}}" alt="...">
+
     </div>
+    <ng-template #notFound>
+        <div class="list-img">
+            <img src="../../assets/not_found.jpg" alt="...">
+        </div>
+
+    </ng-template>
+
     <div class="list-content">
         <div class="list-title">
             <h4>{{movieTitle}}</h4>
@@ -12,11 +20,15 @@
                 {{movieDate | date: 'dd MMMM, y' }}
             </p>
         </div>
-        <div>
+        <div *ngIf="movieText; else loremBlock">
             <p>{{movieText | slice:0:300 }}...</p>
+        </div>
+        <div>
+            <ng-template #loremBlock>
+                <p>Oups, overview not found !</p>
+            </ng-template>
         </div>
         <div class="list-button">
             <button type="button" class="btn btn-primary">Add</button>
         </div>
     </div>
-</div>
