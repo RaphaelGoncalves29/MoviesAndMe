@@ -1,4 +1,4 @@
-<div class="list">
+<div class="list" *ngIf="movieTitle; else tvShow">
     <div class="list-img" *ngIf="moviePoster; else notFound">
         <img src="https://image.tmdb.org/t/p/w200/{{moviePoster}}" alt="...">
 
@@ -32,3 +32,41 @@
             <button type="button" class="btn btn-primary">Add</button>
         </div>
     </div>
+</div>
+<ng-template #tvShow>
+    <div class="list">
+        <div class="list-img" *ngIf="tvPoster; else notFound">
+            <img src="https://image.tmdb.org/t/p/w200/{{tvPoster}}" alt="...">
+
+        </div>
+        <ng-template #notFound>
+            <div class="list-img">
+                <img src="../../assets/not_found.jpg" alt="...">
+            </div>
+
+        </ng-template>
+
+        <div class="list-content">
+            <div class="list-title">
+                <h4>{{tvName}}</h4>
+                <h5>{{tvVote}}</h5>
+            </div>
+            <div class="list-date">
+                <p>
+                    {{tvDate | date: 'dd MMMM, y' }}
+                </p>
+            </div>
+            <div *ngIf="tvText; else loremBlock">
+                <p>{{tvText | slice:0:300 }}...</p>
+            </div>
+            <div>
+                <ng-template #loremBlock>
+                    <p>Oups, overview not found !</p>
+                </ng-template>
+            </div>
+            <div class="list-button">
+                <button type="button" class="btn btn-primary">Add</button>
+            </div>
+        </div>
+    </div>
+</ng-template>

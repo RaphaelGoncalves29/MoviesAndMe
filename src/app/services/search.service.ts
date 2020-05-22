@@ -33,13 +33,4 @@ export class SearchService {
     )
     .pipe(map((response: any) => response.results));
   }
-  
-  test(): Observable<Movie[]> {
-    return this.httpClient.get<Movie[]>(
-      "https://api.themoviedb.org/3/search/movie?api_key=" +
-        this.token +
-        "&language=fr&query=star"
-    )
-    .pipe(map((response: any) => response.results));
-  }
 }

@@ -11,8 +11,16 @@ export class ListComponent implements OnInit {
   @Input() movieVote: number;
   @Input() movieDate: Date;
   @Input() moviePoster: string;
+  @Input() movieText: string;
   @Input() indexOfMovie: number;
-  @Input() movieText: string
+
+  @Input() tvName: string;
+  @Input() tvVote: number;
+  @Input() tvDate: Date;
+  @Input() tvPoster;
+  @Input() tvText: string;
+  @Input() indexOfTv:number;
+
 
   constructor() { }
 

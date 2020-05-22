@@ -19,9 +19,6 @@ export class MovieComponent implements OnInit {
 
   ngOnInit(): void {
     this.initForm();
-    this.searchService
-      .test()
-      .subscribe((res) => (this.movies = res));
   }
 
   initForm() {
@@ -34,8 +31,8 @@ export class MovieComponent implements OnInit {
     const formValue = this.movieForm.value;
     const movieSearch = formValue["title"];
 
-    // this.searchService
-    //   .searchMovie(movieSearch)
-    //   .subscribe((res) => (this.movies = res));
+    this.searchService
+      .searchMovie(movieSearch)
+      .subscribe((res) => (this.movies = res));
   }
 }

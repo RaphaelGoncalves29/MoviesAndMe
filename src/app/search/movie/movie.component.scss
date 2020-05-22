@@ -1,0 +1,12 @@
+.search {
+  display: flex;
+  justify-content: space-around;
+}
+
+button {
+  font-size: 22px;
+}
+
+input+button {
+  margin-left: 10px;
+}
