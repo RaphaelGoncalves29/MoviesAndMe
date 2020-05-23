@@ -10,7 +10,7 @@ import { SearchService } from "src/app/services/search.service";
 })
 export class TvShowComponent implements OnInit {
   tvShows: TvShow[];
-  tvForm: FormGroup;
+  isMovie: boolean;
 
   constructor(
     private searchService: SearchService,
@@ -18,21 +18,14 @@ export class TvShowComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.initForm();
+    this.isMovie = false;
   }
 
-  initForm() {
-    this.tvForm = this.formBuilder.group({
-      title: ["", Validators.required],
-    });
-  }
-
-  submitForm() {
-    const formValue = this.tvForm.value;
-    const tvSearch = formValue["title"];
-
-    this.searchService
-      .searchTvShow(tvSearch)
-      .subscribe((res) => (this.tvShows = res));
+  getOutputVal(tvTitleSearch: string) {
+    if (tvTitleSearch) {
+      this.searchService.searchTvShow(tvTitleSearch).subscribe((res) => {
+        this.tvShows = res;
+      });
+    }
   }
 }

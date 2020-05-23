@@ -1,10 +1,3 @@
-<div class="search">
-  <form class="form-inline" [formGroup]="tvForm" (ngSubmit)="submitForm()">
-    <input type="text" id="title" class="form-control form-control-lg" formControlName="title"
-      placeholder="Search for a Tv Show">
-    <button type="submit" class="btn btn-primary" [disabled]="tvForm.invalid">Search</button>
-  </form>
-</div>
-<app-list *ngFor="let tv of tvShows; let i = index" [indexOfTv]="i" [tvName]="tv.name" [tvVote]="tv.vote_average"
-  [tvDate]="tv.first_air_date" [tvPoster]="tv.poster_path" [tvText]="tv.overview">
+<app-search [isMovie]="isMovie" (outputToParent)="getOutputVal($event)"></app-search>
+<app-list *ngFor="let tv of tvShows; let i = index" [indexOfTv]="i" [tv]="tv">
 </app-list>

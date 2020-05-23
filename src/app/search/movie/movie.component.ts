@@ -10,29 +10,20 @@ import { SearchService } from "src/app/services/search.service";
 })
 export class MovieComponent implements OnInit {
   movies: Movie[];
-  movieForm: FormGroup;
+  movieTitleSearch: string;
+  isMovie: boolean;
 
-  constructor(
-    private searchService: SearchService,
-    private formBuilder: FormBuilder
-  ) {}
+  constructor(private searchService: SearchService) {}
 
   ngOnInit(): void {
-    this.initForm();
+    this.isMovie = true;
   }
 
-  initForm() {
-    this.movieForm = this.formBuilder.group({
-      title: ["", Validators.required],
-    });
-  }
-
-  submitForm() {
-    const formValue = this.movieForm.value;
-    const movieSearch = formValue["title"];
-
-    this.searchService
-      .searchMovie(movieSearch)
-      .subscribe((res) => (this.movies = res));
+  getOutputVal(movieTitleSearch: string) {
+    if (movieTitleSearch) {
+      this.searchService.searchMovie(movieTitleSearch).subscribe((res) => {
+        this.movies = res;
+      });
+    }
   }
 }

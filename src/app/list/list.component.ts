@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Movie } from '../models/movie.model';
+import { TvShow } from '../models/tvShow.models';
 
 @Component({
   selector: 'app-list',
@@ -7,24 +9,20 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  @Input() movieTitle: string;
-  @Input() movieVote: number;
-  @Input() movieDate: Date;
-  @Input() moviePoster: string;
-  @Input() movieText: string;
   @Input() indexOfMovie: number;
+  @Input() movie: Movie;
 
-  @Input() tvName: string;
-  @Input() tvVote: number;
-  @Input() tvDate: Date;
-  @Input() tvPoster;
-  @Input() tvText: string;
   @Input() indexOfTv:number;
+  @Input() tv: TvShow;
 
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  addMovie(movie) {
+    console.log(movie)
   }
 
 }

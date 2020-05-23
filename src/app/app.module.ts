@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MovieComponent } from './search/movie/movie.component';
 import { TvShowComponent } from './search/tv-show/tv-show.component';
 import { ListComponent } from './list/list.component';
+import { SearchComponent } from './search/search/search.component';
 
 
 const appRoutes: Routes = [
@@ -29,7 +30,8 @@ const appRoutes: Routes = [
     HeaderComponent,
     MovieComponent,
     TvShowComponent,
-    ListComponent
+    ListComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

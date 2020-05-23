@@ -1,6 +1,6 @@
-<div class="list" *ngIf="movieTitle; else tvShow">
-    <div class="list-img" *ngIf="moviePoster; else notFound">
-        <img src="https://image.tmdb.org/t/p/w200/{{moviePoster}}" alt="...">
+<div class="list" *ngIf="movie">
+    <div class="list-img" *ngIf="movie.poster_path; else notFound">
+        <img src="https://image.tmdb.org/t/p/w200/{{movie.poster_path}}" alt="...">
 
     </div>
     <ng-template #notFound>
@@ -12,16 +12,16 @@
 
     <div class="list-content">
         <div class="list-title">
-            <h4>{{movieTitle}}</h4>
-            <h5>{{movieVote}}</h5>
+            <h4>{{movie.title}}</h4>
+            <h5>{{movie.vote_average}}</h5>
         </div>
         <div class="list-date">
             <p>
-                {{movieDate | date: 'dd MMMM, y' }}
+                {{movie.release_date | date: 'dd MMMM, y' }}
             </p>
         </div>
-        <div *ngIf="movieText; else loremBlock">
-            <p>{{movieText | slice:0:300 }}...</p>
+        <div *ngIf="movie.overview; else loremBlock">
+            <p>{{movie.overview | slice:0:300 }}...</p>
         </div>
         <div>
             <ng-template #loremBlock>
@@ -29,14 +29,14 @@
             </ng-template>
         </div>
         <div class="list-button">
-            <button type="button" class="btn btn-primary">Add</button>
+            <button type="button" class="btn btn-primary" (click)="addMovie(movie)">Add</button>
         </div>
     </div>
 </div>
-<ng-template #tvShow>
+<div *ngIf="tv">
     <div class="list">
-        <div class="list-img" *ngIf="tvPoster; else notFound">
-            <img src="https://image.tmdb.org/t/p/w200/{{tvPoster}}" alt="...">
+        <div class="list-img" *ngIf="tv.poster_path; else notFound">
+            <img src="https://image.tmdb.org/t/p/w200/{{tv.poster_path}}" alt="...">
 
         </div>
         <ng-template #notFound>
@@ -48,16 +48,16 @@
 
         <div class="list-content">
             <div class="list-title">
-                <h4>{{tvName}}</h4>
-                <h5>{{tvVote}}</h5>
+                <h4>{{tv.name}}</h4>
+                <h5>{{tv.vote_average}}</h5>
             </div>
             <div class="list-date">
                 <p>
-                    {{tvDate | date: 'dd MMMM, y' }}
+                    {{tv.first_air_date | date: 'dd MMMM, y' }}
                 </p>
             </div>
-            <div *ngIf="tvText; else loremBlock">
-                <p>{{tvText | slice:0:300 }}...</p>
+            <div *ngIf="tv.overview; else loremBlock">
+                <p>{{tv.overview | slice:0:300 }}...</p>
             </div>
             <div>
                 <ng-template #loremBlock>
@@ -69,4 +69,4 @@
             </div>
         </div>
     </div>
-</ng-template>
+</div>

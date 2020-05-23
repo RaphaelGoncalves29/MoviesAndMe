@@ -1,0 +1,18 @@
+<div *ngIf="isMovie; else notMovie">
+    <div class="search">
+        <form class="form-inline" [formGroup]="movieForm" (ngSubmit)="submitMovieForm()">
+            <input type="text" id="title" class="form-control form-control-lg" formControlName="title"
+                placeholder="Search for a movie">
+            <button type="submit" class="btn btn-primary" [disabled]="movieForm.invalid">Search</button>
+        </form>
+    </div>
+</div>
+<ng-template #notMovie>
+    <div class="search">
+        <form class="form-inline" [formGroup]="tvForm" (ngSubmit)="submitTvForm()">
+            <input type="text" id="title" class="form-control form-control-lg" formControlName="title"
+                placeholder="Search for a tv show">
+            <button type="submit" class="btn btn-primary" [disabled]="tvForm.invalid">Search</button>
+        </form>
+    </div>
+</ng-template>
