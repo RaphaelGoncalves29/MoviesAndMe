@@ -12,10 +12,20 @@ import { MovieComponent } from './search/movie/movie.component';
 import { TvShowComponent } from './search/tv-show/tv-show.component';
 import { ListComponent } from './list/list.component';
 import { SearchComponent } from './search/search/search.component';
+import { MovieListComponent } from './movie-list/movie-list.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatSliderModule } from '@angular/material/slider';
+import {MatButtonModule} from '@angular/material/button';
+import { NgxPaginationModule } from 'ngx-pagination';
+import {MatMenuModule} from '@angular/material/menu';
+import { DialogComponent } from './dialog/dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
 
 
 const appRoutes: Routes = [
-  { path: 'movies', component: TvShowListComponent },
+  { path: 'movies', component: MovieListComponent },
   { path: 'tv-shows', component: TvShowListComponent },
   { path: 'search/movie', component: MovieComponent },
   { path: 'search/tv-show', component: TvShowComponent },
@@ -31,14 +41,25 @@ const appRoutes: Routes = [
     MovieComponent,
     TvShowComponent,
     ListComponent,
-    SearchComponent
+    SearchComponent,
+    MovieListComponent,
+    DialogComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatSnackBarModule,
+    MatDialogModule,
+    MatMenuModule,
     FormsModule,
+    NgxPaginationModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    MatIconModule,
+    BrowserAnimationsModule,
+    MatSliderModule
   ],
   providers: [SearchService],
   bootstrap: [AppComponent]

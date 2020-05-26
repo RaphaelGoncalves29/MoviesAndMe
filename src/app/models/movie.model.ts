@@ -1,5 +1,6 @@
 export class Movie {
     id: number;
+    idMovie: number;
     vote_average: number;
     title: string;
     release_date: Date;

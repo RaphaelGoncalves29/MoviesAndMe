@@ -28,8 +28,12 @@
                 <p>Oups, overview not found !</p>
             </ng-template>
         </div>
-        <div class="list-button">
-            <button type="button" class="btn btn-primary" (click)="addMovie(movie)">Add</button>
+        <div *ngIf="!movieList" class="list-button">
+            <button mat-raised-button color="primary" (click)="addMovie(movie)"
+                [disabled]="movieButton === false">Add</button>
+        </div>
+        <div *ngIf="movieList" class="list-button">
+            <button mat-raised-button color="warn" (click)="removeMovie(movie)">Remove</button>
         </div>
     </div>
 </div>
@@ -64,7 +68,7 @@
                     <p>Oups, overview not found !</p>
                 </ng-template>
             </div>
-            <div class="list-button">
+            <div class="list-button" *ngIf="!tvShowList">
                 <button type="button" class="btn btn-primary">Add</button>
             </div>
         </div>
