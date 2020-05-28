@@ -1,4 +1,0 @@
-<h3 class="number"><span class="badge badge-primary">Number of movies : {{size }} </span></h3>
-<app-list *ngFor="let movie of movies | paginate: config; let i = index" [indexOfMovie]="i" [movie]="movie" [movieList]="movieList" (outputToParentMovie)="getOutputVal($event)">
-</app-list>
-<pagination-controls (pageChange)="pageChange($event)" class="my-pagination"></pagination-controls>

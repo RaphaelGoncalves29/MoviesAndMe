@@ -1,0 +1,36 @@
+<div class="list" *ngIf="movie">
+    <div class="list-img" *ngIf="movie.poster_path; else notFound">
+        <img src="https://image.tmdb.org/t/p/w200/{{movie.poster_path}}" alt="...">
+
+    </div>
+    <ng-template #notFound>
+        <div class="list-img">
+            <img src="../../assets/not_found.jpg" alt="...">
+        </div>
+
+    </ng-template>
+
+    <div class="list-content">
+        <div class="list-title">
+            <h4>{{movie.title}}</h4>
+            <h5>{{movie.vote_average}}</h5>
+        </div>
+        <div class="list-date">
+            <p>
+                {{movie.release_date | date: 'dd MMMM, y' }}
+            </p>
+        </div>
+        <div *ngIf="movie.overview; else loremBlock">
+            <p>{{movie.overview | slice:0:300 }}...</p>
+        </div>
+        <div>
+            <ng-template #loremBlock>
+                <p>Oups, overview not found !</p>
+            </ng-template>
+        </div>
+        <div class="list-button">
+            <button mat-raised-button color="primary" (click)="addMovie(movie)"
+                [disabled]="movieButton === false">Add</button>
+        </div>
+    </div>
+</div>

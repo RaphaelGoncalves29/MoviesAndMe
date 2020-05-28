@@ -5,5 +5,6 @@ export class Movie {
     title: string;
     release_date: Date;
     poster_path: string;
-    overview: string
+    overview: string;
+    original_title: string
 }

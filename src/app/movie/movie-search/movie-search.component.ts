@@ -1,22 +1,20 @@
-import { Component, OnInit } from "@angular/core";
-import { Movie } from "src/app/models/movie.model";
-import { FormGroup, FormBuilder, Validators } from "@angular/forms";
-import { SearchService } from "src/app/services/search.service";
+import { Component, OnInit } from '@angular/core';
+import { SearchService } from 'src/app/services/search.service';
 import { MoviesService } from 'src/app/services/movies.service';
+import { Movie } from 'src/app/models/movie.model';
 
 @Component({
-  selector: "app-movie",
-  templateUrl: "./movie.component.html",
-  styleUrls: ["./movie.component.scss"],
+  selector: 'app-movie-search',
+  templateUrl: './movie-search.component.html',
+  styleUrls: ['./movie-search.component.scss']
 })
-export class MovieComponent implements OnInit {
+export class MovieSearchComponent implements OnInit {
   movies: Movie[];
   movieTitleSearch: string;
   isMovie: boolean;
-
   moviesId = [];
 
-  constructor(private searchService: SearchService, private movieService: MoviesService) {}
+  constructor(private searchService: SearchService, private movieService: MoviesService) { }
 
   ngOnInit(): void {
     this.isMovie = true;
@@ -27,7 +25,6 @@ export class MovieComponent implements OnInit {
           this.moviesId.push(res[i].idMovie);
         }
       });
-      // console.log(this.moviesId)
   }
 
   getOutputVal(movieTitleSearch: string) {
@@ -37,4 +34,5 @@ export class MovieComponent implements OnInit {
       });
     }
   }
+
 }
