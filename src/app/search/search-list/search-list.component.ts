@@ -3,6 +3,7 @@ import { Movie } from 'src/app/models/movie.model';
 import { MoviesService } from 'src/app/services/movies.service';
 import { TvShowsService } from 'src/app/services/tv-shows.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { TvShow } from 'src/app/models/tvShow.models';
 
 @Component({
   selector: 'app-search-list',
@@ -10,21 +11,36 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./search-list.component.scss']
 })
 export class SearchListComponent implements OnInit {
-  @Input() indexOfMovie: number;
   @Input() movie: Movie;
-
   @Input() moviesId = [];
 
-  movieButton: boolean;
+  @Input() tv: TvShow;
+  @Input() tvShowsId = [];
 
-  constructor(private movieService: MoviesService,
+  movieButton: boolean;
+  tvButton : boolean;
+
+  constructor(private moviesService: MoviesService,
     private tvShowsService: TvShowsService,
     private _snackBar: MatSnackBar,) { }
 
   ngOnInit(): void {
+    this.initMovieButton();
+    this.initTvButton();
+  }
+
+  initMovieButton() {
     for (var i = 0; i < this.moviesId.length; i++) {
       if (this.movie.id === this.moviesId[i]) {
         this.movieButton = false;
+      }
+    }
+  }
+
+  initTvButton() {
+    for (var i = 0; i < this.tvShowsId.length; i++) {
+      if (this.tv.id === this.tvShowsId[i]) {
+        this.tvButton = false;
       }
     }
   }
@@ -38,10 +54,25 @@ export class SearchListComponent implements OnInit {
     newMovie.release_date = movie.release_date;
     newMovie.vote_average = movie.vote_average;
 
-    this.movieService.addMovie(newMovie);
-    this.openSnackBar("Movie added !");
+    this.moviesService.addMovie(newMovie);
+    this.openSnackBar('Movie added !');
 
     this.movieButton = false;
+  }
+
+  addTvShow(tvShow: TvShow) {
+    const newTvShow = new TvShow();
+    newTvShow.idTv = tvShow.id;
+    newTvShow.name = tvShow.name;
+    newTvShow.poster_path = tvShow.poster_path;
+    newTvShow.first_air_date = tvShow.first_air_date;
+    newTvShow.vote_average = tvShow.vote_average
+    newTvShow.status = 0;
+
+    this.tvShowsService.addTvShow(newTvShow);
+    this.openSnackBar('Tv Show added !');
+
+    this.tvButton = false;
   }
 
   openSnackBar(item: string) {

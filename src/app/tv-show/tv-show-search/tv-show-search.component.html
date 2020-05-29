@@ -1,0 +1,3 @@
+<app-search (outputToParentTvShow)="getOutputVal($event)"></app-search>
+<app-search-list *ngFor="let tv of tvShows" [tv]="tv" [tvShowsId]="tvShowsId">
+</app-search-list>

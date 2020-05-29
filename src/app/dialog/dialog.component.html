@@ -1,10 +1,37 @@
-<h1 mat-dialog-title>Remove movie</h1>
-<div mat-dialog-content>Are you sure you to remove the movie : {{movie.title}}</div>
-<div mat-dialog-actions>
-    <button mat-icon-button color="primary" (click)="remove()">
-        <mat-icon>check_circle_outline</mat-icon>
-    </button>
-    <button mat-icon-button color="warn" (click)="close()">
-        <mat-icon>highlight_off</mat-icon>
-    </button>
+<div *ngIf="isMovie">
+    <h1 mat-dialog-title>Remove Movie ?</h1>
+    <div mat-dialog-content>Are you sure you to remove the Movie : "{{movie.title}}"</div>
+    <div mat-dialog-actions>
+        <button mat-icon-button color="primary" (click)="remove()">
+            <mat-icon>check_circle_outline</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="close()">
+            <mat-icon>highlight_off</mat-icon>
+        </button>
+    </div>
+</div>
+<div *ngIf="isTvShow">
+    <h1 mat-dialog-title>Remove Tv Show ?</h1>
+    <div mat-dialog-content>Are you sure you to remove the Tv Show : "{{tvShow.name}}"</div>
+    <div mat-dialog-actions>
+        <button mat-icon-button color="primary" (click)="remove()">
+            <mat-icon>check_circle_outline</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="close()">
+            <mat-icon>highlight_off</mat-icon>
+        </button>
+    </div>
+</div>
+<div *ngIf="isUpdate">
+    <h1 mat-dialog-title>Update status</h1>
+    <div mat-dialog-content>Update the status of the Tv Show : "{{tvShow.name}}"</div>
+    <div mat-dialog-actions class="update">
+        <select [(ngModel)]="myDropDown" (ngModelChange)="onChangeofOptions($event)">
+            <option value="0" [disabled]="tvShow.status === 0 ">Never finished</option>
+            <option value="1" [disabled]="tvShow.status === 1 ">Finished</option>
+            <option value="2" [disabled]="tvShow.status === 2 ">Waiting for new...</option>
+            <option value="3" [disabled]="tvShow.status === 3 ">Watching</option>
+        </select>
+        <button mat-raised-button color="primary" [disabled]="!updateButton" (click)="update()">Update</button>
+    </div>
 </div>

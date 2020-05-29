@@ -19,27 +19,26 @@ export class MovieListComponent implements OnInit {
     "title",
     "originalTitle",
     "date",
-    "action",
+    "vote",
+    "remove",
   ];
   movies: Movie[];
   size: number;
 
-  dataSource: MatTableDataSource<any>;
-  @ViewChild(MatSort) sort: MatSort;
+  dataSource: MatTableDataSource<Movie>;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(
-    private movieService: MoviesService,
+    private moviesService: MoviesService,
     private _snackBar: MatSnackBar,
     public dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
-    this.movieService.getMovies().subscribe((res) => {
+    this.moviesService.getMovies().subscribe((res) => {
       this.movies = res;
       this.size = this.movies.length;
       this.dataSource = new MatTableDataSource(this.movies);
-      this.dataSource.sort = this.sort;
       this.dataSource.paginator = this.paginator;
     });
   }
@@ -48,24 +47,25 @@ export class MovieListComponent implements OnInit {
     this._snackBar.open(item, "Close", {
       duration: 3000,
       horizontalPosition: "right",
-      verticalPosition: "top",
+      verticalPosition: "bottom",
     });
   }
 
   remove(movie: Movie) {
+    const isMovie = true;
     const dialogConfig = new MatDialogConfig();
 
-    dialogConfig.data = movie;
+    dialogConfig.data = {movie, isMovie};
 
     const dialogRef = this.dialog.open(DialogComponent, dialogConfig);
 
     dialogRef.afterClosed().subscribe((data) => {
-      console.log("Dialog output:", data);
       if (data === true) {
-        this.movieService.deleteMovie(movie.id).subscribe();
+        this.moviesService.deleteMovie(movie.id).subscribe();
         this.dataSource.data.splice(this.movies.indexOf(movie), 1);
         this.dataSource = new MatTableDataSource<Movie>(this.dataSource.data);
         this.openSnackBar("Movie removed !");
+        this.size--;
       }
     });
   }

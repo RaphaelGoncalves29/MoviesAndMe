@@ -1,3 +1,3 @@
-<app-search [isMovie]="isMovie" (outputToParent)="getOutputVal($event)"></app-search>
-<app-search-list *ngFor="let movie of movies; let i = index" [indexOfMovie]="i" [movie]="movie" [moviesId]="moviesId">
+<app-search [isMovie]="isMovie" (outputToParentMovie)="getOutputVal($event)"></app-search>
+<app-search-list *ngFor="let movie of movies" [movie]="movie" [moviesId]="moviesId">
 </app-search-list>

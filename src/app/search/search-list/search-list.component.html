@@ -34,3 +34,39 @@
         </div>
     </div>
 </div>
+<div class="list" *ngIf="tv">
+    <div class="list-img" *ngIf="tv.poster_path; else notFound">
+        <img src="https://image.tmdb.org/t/p/w200/{{tv.poster_path}}" alt="...">
+
+    </div>
+    <ng-template #notFound>
+        <div class="list-img">
+            <img src="../../assets/not_found.jpg" alt="...">
+        </div>
+
+    </ng-template>
+
+    <div class="list-content">
+        <div class="list-title">
+            <h4>{{tv.name}}</h4>
+            <h5>{{tv.vote_average}}</h5>
+        </div>
+        <div class="list-date">
+            <p>
+                {{tv.first_air_date | date: 'dd MMMM, y' }}
+            </p>
+        </div>
+        <div *ngIf="tv.overview; else loremBlock">
+            <p>{{tv.overview | slice:0:300 }}...</p>
+        </div>
+        <div>
+            <ng-template #loremBlock>
+                <p>Oups, overview not found !</p>
+            </ng-template>
+        </div>
+        <div class="list-button">
+            <button mat-raised-button color="primary" (click)="addTvShow(tv)"
+                [disabled]="tvButton === false">Add</button>
+        </div>
+    </div>
+</div>

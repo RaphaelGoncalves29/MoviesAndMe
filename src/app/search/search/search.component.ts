@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Movie } from 'src/app/models/movie.model';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { SearchService } from 'src/app/services/search.service';
+import { TvShow } from 'src/app/models/tvShow.models';
 
 @Component({
   selector: 'app-search',
@@ -13,7 +14,9 @@ export class SearchComponent implements OnInit {
   movieForm: FormGroup;
   tvForm: FormGroup;
 
-  @Output() outputToParent = new EventEmitter<Movie[]>();
+  @Output() outputToParentMovie = new EventEmitter<Movie[]>();
+  @Output() outputToParentTvShow = new EventEmitter<TvShow[]>();
+
 
   constructor(private searchService: SearchService,
     private formBuilder: FormBuilder) { }
@@ -38,13 +41,13 @@ export class SearchComponent implements OnInit {
   submitMovieForm() {
     const formValue = this.movieForm.value;
     const movieSearch = formValue["title"];
-    this.outputToParent.emit(movieSearch);
+    this.outputToParentMovie.emit(movieSearch);
   }
 
   submitTvForm() {
     const formValue = this.tvForm.value;
-    const movieSearch = formValue["title"];
-    this.outputToParent.emit(movieSearch);
+    const tvSearch = formValue["title"];
+    this.outputToParentTvShow.emit(tvSearch);
   }
 
 }

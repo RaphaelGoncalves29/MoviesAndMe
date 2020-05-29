@@ -2,14 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { TvShowListComponent } from './tv-show-list/tv-show-list.component';
 import { HeaderComponent } from './header/header.component';
 import { Routes, RouterModule } from '@angular/router'
 import { HttpClientModule } from '@angular/common/http';
 import { SearchService } from './services/search.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TvShowComponent } from './search/tv-show/tv-show.component';
-import { ListComponent } from './list/list.component';
 import { SearchComponent } from './search/search/search.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
@@ -27,14 +24,15 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { MovieSearchComponent } from './movie/movie-search/movie-search.component';
 import { SearchListComponent } from './search/search-list/search-list.component';
 import { MovieListComponent } from './movie/movie-list/movie-list.component';
-
-
+import { TvShowSearchComponent } from './tv-show/tv-show-search/tv-show-search.component';
+import { TvShowListComponent } from './tv-show/tv-show-list/tv-show-list.component';
+import {MatSelectModule} from '@angular/material/select';
 
 const appRoutes: Routes = [
   { path: 'movies', component: MovieListComponent },
   { path: 'tv-shows', component: TvShowListComponent },
   { path: 'search/movie', component: MovieSearchComponent },
-  { path: 'search/tv-show', component: TvShowComponent },
+  { path: 'search/tv-show', component: TvShowSearchComponent },
   { path: '', redirectTo: 'search/movie', pathMatch: 'full'},
   { path: '**', redirectTo: "search/movie"}
 ];
@@ -44,13 +42,12 @@ const appRoutes: Routes = [
     AppComponent,
     TvShowListComponent,
     HeaderComponent,
-    TvShowComponent,
-    ListComponent,
     SearchComponent,
     MovieListComponent,
     DialogComponent,
     MovieSearchComponent,
     SearchListComponent,
+    TvShowSearchComponent,
   ],
   imports: [
     BrowserModule,
@@ -66,6 +63,7 @@ const appRoutes: Routes = [
     MatPaginatorModule,
     MatProgressBarModule,
     ReactiveFormsModule,
+    MatSelectModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
     MatIconModule,
