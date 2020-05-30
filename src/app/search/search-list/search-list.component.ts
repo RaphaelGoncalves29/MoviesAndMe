@@ -79,7 +79,7 @@ export class SearchListComponent implements OnInit {
     this._snackBar.open(item ,"Close", {
       duration: 3000,
       horizontalPosition: "right",
-      verticalPosition: "top",
+      verticalPosition: "bottom",
     });
   }
 

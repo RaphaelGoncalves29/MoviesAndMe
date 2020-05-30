@@ -64,8 +64,9 @@ export class MovieListComponent implements OnInit {
         this.moviesService.deleteMovie(movie.id).subscribe();
         this.dataSource.data.splice(this.movies.indexOf(movie), 1);
         this.dataSource = new MatTableDataSource<Movie>(this.dataSource.data);
-        this.openSnackBar("Movie removed !");
+        this.dataSource.paginator = this.paginator;
         this.size--;
+        this.openSnackBar("Movie removed !");
       }
     });
   }

@@ -27,6 +27,7 @@ import { MovieListComponent } from './movie/movie-list/movie-list.component';
 import { TvShowSearchComponent } from './tv-show/tv-show-search/tv-show-search.component';
 import { TvShowListComponent } from './tv-show/tv-show-list/tv-show-list.component';
 import {MatSelectModule} from '@angular/material/select';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 const appRoutes: Routes = [
   { path: 'movies', component: MovieListComponent },
@@ -54,6 +55,7 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     MatButtonModule,
     MatSnackBarModule,
+    MatToolbarModule,
     MatDialogModule,
     MatMenuModule,
     FormsModule,

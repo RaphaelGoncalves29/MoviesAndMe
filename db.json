@@ -1,123 +1,6 @@
 {
   "movies": [
     {
-      "idMovie": 18411,
-      "title": "Bat Thumb",
-      "original_title": "Bat Thumb",
-      "poster_path": "/7nIJrkr0wZRX5Pa5M4XMU0fAehz.jpg",
-      "release_date": "2001-01-01",
-      "vote_average": 6.1,
-      "id": 29
-    },
-    {
-      "idMovie": 41021,
-      "title": "La Chauve-souris du diable",
-      "original_title": "The Devil Bat",
-      "poster_path": "/5JGiEOwyA9utHlyAL3y28NTOl4W.jpg",
-      "release_date": "1940-12-13",
-      "vote_average": 5.2,
-      "id": 30
-    },
-    {
-      "idMovie": 614747,
-      "title": "Archie's Bat",
-      "original_title": "Archie's Bat",
-      "poster_path": null,
-      "release_date": "2019-07-14",
-      "vote_average": 6,
-      "id": 31
-    },
-    {
-      "idMovie": 26162,
-      "title": "The Bat Whispers",
-      "original_title": "The Bat Whispers",
-      "poster_path": "/kNPy7o2ICSrCKjo363eRNG4b8u8.jpg",
-      "release_date": "1930-11-13",
-      "vote_average": 7.1,
-      "id": 32
-    },
-    {
-      "idMovie": 145161,
-      "title": "Rise of the Black Bat",
-      "original_title": "Rise of the Black Bat",
-      "poster_path": "/vzMXE2Jabl1Rn1pK2Q9mlMUxoum.jpg",
-      "release_date": "2012-12-06",
-      "vote_average": 5.4,
-      "id": 33
-    },
-    {
-      "idMovie": 27501,
-      "title": "The Bat",
-      "original_title": "The Bat",
-      "poster_path": "/qqfdMmOeG1QSLcnJPhIF2ln2gIb.jpg",
-      "release_date": "1926-03-14",
-      "vote_average": 6.3,
-      "id": 34
-    },
-    {
-      "idMovie": 52385,
-      "title": "Chaos",
-      "original_title": "Saam bat gun",
-      "poster_path": null,
-      "release_date": "2008-05-27",
-      "vote_average": 4,
-      "id": 35
-    },
-    {
-      "idMovie": 109791,
-      "title": "Gazta zati bat",
-      "original_title": "Gazta zati bat",
-      "poster_path": null,
-      "release_date": "2012-04-21",
-      "vote_average": 0,
-      "id": 36
-    },
-    {
-      "idMovie": 174759,
-      "title": "The Sea Bat",
-      "original_title": "The Sea Bat",
-      "poster_path": null,
-      "release_date": "1930-07-05",
-      "vote_average": 6,
-      "id": 37
-    },
-    {
-      "idMovie": 535471,
-      "title": "Weetzie Bat",
-      "original_title": "Weetzie Bat",
-      "poster_path": null,
-      "release_date": "",
-      "vote_average": 0,
-      "id": 38
-    },
-    {
-      "idMovie": 329162,
-      "title": "Ben Loke'ah Bat",
-      "original_title": "Ben Loke'ah Bat",
-      "poster_path": "/nlJtDRCuArRfcPuxBVRr1eIHyGr.jpg",
-      "release_date": "1982-01-02",
-      "vote_average": 6,
-      "id": 39
-    },
-    {
-      "idMovie": 147240,
-      "title": "Casey at the Bat",
-      "original_title": "Casey at the Bat",
-      "poster_path": "/nDotdFRf2jFgTt5lNA4PS4qQ1gI.jpg",
-      "release_date": "1946-08-15",
-      "vote_average": 7.3,
-      "id": 40
-    },
-    {
-      "idMovie": 554793,
-      "title": "Người Bất Tử",
-      "original_title": "Người Bất Tử",
-      "poster_path": "/cbApAuyYDvspQzqiozwwezJaROl.jpg",
-      "release_date": "2018-10-26",
-      "vote_average": 4,
-      "id": 41
-    },
-    {
       "idMovie": 471428,
       "title": "Bat Eyes",
       "original_title": "Bat Eyes",
@@ -136,15 +19,6 @@
       "id": 43
     },
     {
-      "idMovie": 707,
-      "title": "Dangereusement vôtre",
-      "original_title": "A View to a Kill",
-      "poster_path": "/6NWRMfYVbeb8r1RjwWvYYRU8KPf.jpg",
-      "release_date": "1985-05-24",
-      "vote_average": 6.1,
-      "id": 45
-    },
-    {
       "idMovie": 9487,
       "title": "1001 pattes",
       "original_title": "A Bug's Life",
@@ -154,78 +28,6 @@
       "id": 46
     },
     {
-      "idMovie": 447332,
-      "title": "Sans un bruit",
-      "original_title": "A Quiet Place",
-      "poster_path": "/xlJCSHnR7sbaibX3OY97vEmsjxt.jpg",
-      "release_date": "2018-04-03",
-      "vote_average": 7.3,
-      "id": 47
-    },
-    {
-      "idMovie": 623,
-      "title": "Un Poisson nommé Wanda",
-      "original_title": "A Fish Called Wanda",
-      "poster_path": "/axPDdJguyn7ilGBYHknQYclG6Su.jpg",
-      "release_date": "1988-07-15",
-      "vote_average": 7.2,
-      "id": 48
-    },
-    {
-      "idMovie": 9476,
-      "title": "Chevalier",
-      "original_title": "A Knight's Tale",
-      "poster_path": "/6gmQTlH6btuATfkpWT7Lt7VB0QP.jpg",
-      "release_date": "2001-05-11",
-      "vote_average": 6.8,
-      "id": 49
-    },
-    {
-      "idMovie": 62,
-      "title": "2001 : l'odyssée de l'espace",
-      "original_title": "2001: A Space Odyssey",
-      "poster_path": "/uwd79G32FPIL5B9UkRgSZvS0gbe.jpg",
-      "release_date": "1968-04-09",
-      "vote_average": 8.1,
-      "id": 50
-    },
-    {
-      "idMovie": 381289,
-      "title": "Mes vies de chien",
-      "original_title": "A Dog's Purpose",
-      "poster_path": "/4HHKY64gDioW2zKNZxMxj7LsETx.jpg",
-      "release_date": "2017-01-19",
-      "vote_average": 7.4,
-      "id": 51
-    },
-    {
-      "idMovie": 37735,
-      "title": "Easy Girl",
-      "original_title": "Easy A",
-      "poster_path": "/33TSCN5VHkhAVYTL6CjudaFJc0T.jpg",
-      "release_date": "2010-09-16",
-      "vote_average": 6.8,
-      "id": 52
-    },
-    {
-      "idMovie": 177452,
-      "title": "O Estrondo",
-      "original_title": "O Estrondo",
-      "poster_path": "/9OX2LTXy0fBXCooT5oZaIi10HQJ.jpg",
-      "release_date": "2012-10-27",
-      "vote_average": 6.8,
-      "id": 53
-    },
-    {
-      "idMovie": 171238,
-      "title": "O Estrondo II",
-      "original_title": "O Estrondo II",
-      "poster_path": "/28MkhXf7DaVetAADs8lN7bf6x2A.jpg",
-      "release_date": "2013-05-25",
-      "vote_average": 6,
-      "id": 54
-    },
-    {
       "idMovie": 11,
       "title": "La Guerre des étoiles",
       "original_title": "Star Wars",
@@ -233,44 +35,53 @@
       "release_date": "1977-05-25",
       "vote_average": 8.2,
       "id": 55
+    },
+    {
+      "idMovie": 332562,
+      "title": "A Star Is Born",
+      "original_title": "A Star Is Born",
+      "poster_path": "/uoq8DobPxciPEJ5EuBeqDt8av76.jpg",
+      "release_date": "2018-10-03",
+      "vote_average": 7.5,
+      "id": 56
+    },
+    {
+      "idMovie": 348350,
+      "title": "Solo: A Star Wars Story",
+      "original_title": "Solo: A Star Wars Story",
+      "poster_path": "/xcKR6cAhdGmZQxyFfBqW5oPUF6E.jpg",
+      "release_date": "2018-05-15",
+      "vote_average": 6.6,
+      "id": 57
+    },
+    {
+      "idMovie": 140607,
+      "title": "Star Wars : Le Réveil de la Force",
+      "original_title": "Star Wars: The Force Awakens",
+      "poster_path": "/zKZ1iF1ABqL7a16u6Im8JTQKp7H.jpg",
+      "release_date": "2015-12-15",
+      "vote_average": 7.4,
+      "id": 58
+    },
+    {
+      "idMovie": 1653,
+      "title": "Carnets de voyage",
+      "original_title": "Diarios de motocicleta",
+      "poster_path": "/dV72FyhQOaiMiFw4LViwFnd4q2Q.jpg",
+      "release_date": "2004-02-06",
+      "vote_average": 7.4,
+      "id": 59
     }
   ],
   "tvShows": [
-    {
-      "idTv": 78116,
-      "name": "Bra godt",
-      "poster_path": "/uk1njTrnpGiGhVwEb2J4izGFt9j.jpg",
-      "first_air_date": "2018-02-26",
-      "vote_average": 0,
-      "status": 2,
-      "id": 2
-    },
-    {
-      "idTv": 42409,
-      "name": "Chu-Bra!!",
-      "poster_path": "/cxaWXQPsChbvNg2ytiUNjCL32qX.jpg",
-      "first_air_date": "2010-01-04",
-      "vote_average": 7.7,
-      "status": 3,
-      "id": 3
-    },
     {
       "idTv": 2405,
       "name": "Johnny Bravo",
       "poster_path": "/8yiun4uUBbLPjySeEeiJcEWQgJC.jpg",
       "first_air_date": "1997-07-07",
       "vote_average": 6.9,
-      "status": 1,
+      "status": 3,
       "id": 4
-    },
-    {
-      "idTv": 45815,
-      "name": "Avenida Brasil",
-      "poster_path": "/p8uzK1Lngu9q9dpnn4SwPKIT1H7.jpg",
-      "first_air_date": "2012-03-26",
-      "vote_average": 8.1,
-      "status": 2,
-      "id": 5
     },
     {
       "idTv": 71714,
@@ -278,8 +89,26 @@
       "poster_path": "/jC5SzIJP8zk1sRroGM9v7nBx9xp.jpg",
       "first_air_date": "2017-09-25",
       "vote_average": 7,
-      "status": 0,
+      "status": 1,
       "id": 6
+    },
+    {
+      "idTv": 79093,
+      "name": "Star Wars Résistance",
+      "poster_path": "/xul6SG8rar3wkHPY8YusUtxcdlZ.jpg",
+      "first_air_date": "2018-10-07",
+      "vote_average": 6.4,
+      "status": 0,
+      "id": 7
+    },
+    {
+      "idTv": 253,
+      "name": "Star Trek",
+      "poster_path": "/f2wbC7fxiOJqzTb6HPr4N6bsjLF.jpg",
+      "first_air_date": "1966-09-08",
+      "vote_average": 8,
+      "status": 0,
+      "id": 8
     }
   ],
   "profile": {

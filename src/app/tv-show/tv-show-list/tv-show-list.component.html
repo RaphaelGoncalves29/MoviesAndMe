@@ -1,78 +1,80 @@
-<div class="notifications">
-  <h4 class="number"><span class="badge badge-danger">Tv Shows Finished : {{ tvShowsFinished }} </span></h4>
-  <h4 class="number"><span class="badge badge-primary">Tv Shows Waiting : {{ tvShowsWaiting }} </span></h4>
-  <h4 class="number"><span class="badge badge-warning">Tv Shows Watching : {{ tvShowsWatching }} </span></h4>
-</div>
-<div class="mat-elevation-z8">
-  <table mat-table [dataSource]="dataSource">
-
-    <ng-container matColumnDef="poster">
-      <th mat-header-cell *matHeaderCellDef> Poster</th>
-      <td mat-cell *matCellDef="let element">
-        <div *ngIf="element.poster_path; else noPoster">
-          <img src="https://image.tmdb.org/t/p/w200/{{element.poster_path}}" alt="...">
-        </div>
-        <ng-template #noPoster>
-          <img src="../../assets/not_found.jpg" alt="...">
-        </ng-template>
-      </td>
-    </ng-container>
-
-    <ng-container matColumnDef="title">
-      <th mat-header-cell *matHeaderCellDef> Title </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="status">
-      <th mat-header-cell *matHeaderCellDef> Status </th>
-      <td mat-cell *matCellDef="let element" > 
-        <div *ngIf="element.status === 0">
-          <h5><span class="badge badge-secondary">Never finished</span></h5>
-        </div>
-        <div *ngIf="element.status === 1">
-          <h5><span class="badge badge-danger">Finished</span></h5>
-        </div>
-        <div *ngIf="element.status === 2">
-          <h5><span class="badge badge-primary">Waiting for season/episode</span></h5>
-        </div>
-        <div *ngIf="element.status === 3">
-          <h5><span class="badge badge-warning">Watching</span></h5>
-        </div>
-      </td>
-    </ng-container>
-
-    <ng-container matColumnDef="date">
-      <th mat-header-cell *matHeaderCellDef> Date </th>
-      <td mat-cell *matCellDef="let element"> {{element.first_air_date | date: 'dd MMMM, y'}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="vote">
-        <th mat-header-cell *matHeaderCellDef> Vote </th>
-        <td mat-cell *matCellDef="let element"> {{element.vote_average}} </td>
-      </ng-container>
-
-    <ng-container matColumnDef="update">
-        <th mat-header-cell *matHeaderCellDef> Update </th>
+<div class="list">
+  <div class="notifications">
+    <h4 class="number"><span class="badge badge-danger">Tv Shows Finished : {{ tvShowsFinished }} </span></h4>
+    <h4 class="number"><span class="badge badge-primary">Tv Shows Waiting : {{ tvShowsWaiting }} </span></h4>
+    <h4 class="number"><span class="badge badge-warning">Tv Shows Watching : {{ tvShowsWatching }} </span></h4>
+  </div>
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource">
+  
+      <ng-container matColumnDef="poster">
+        <th mat-header-cell *matHeaderCellDef> Poster</th>
         <td mat-cell *matCellDef="let element">
-          <button mat-icon-button class="update" (click)="update(element)">
-            <mat-icon>create</mat-icon>
+          <div *ngIf="element.poster_path; else noPoster">
+            <img src="https://image.tmdb.org/t/p/w200/{{element.poster_path}}" alt="...">
+          </div>
+          <ng-template #noPoster>
+            <img src="../../assets/not_found.jpg" alt="...">
+          </ng-template>
+        </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef> Title </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef> Status </th>
+        <td mat-cell *matCellDef="let element" > 
+          <div *ngIf="element.status === 0">
+            <h5><span class="badge badge-secondary">Never finished</span></h5>
+          </div>
+          <div *ngIf="element.status === 1">
+            <h5><span class="badge badge-danger">Finished</span></h5>
+          </div>
+          <div *ngIf="element.status === 2">
+            <h5><span class="badge badge-primary">Waiting for season/episode</span></h5>
+          </div>
+          <div *ngIf="element.status === 3">
+            <h5><span class="badge badge-warning">Watching</span></h5>
+          </div>
+        </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef> Date </th>
+        <td mat-cell *matCellDef="let element"> {{element.first_air_date | date: 'dd MMMM, y'}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="vote">
+          <th mat-header-cell *matHeaderCellDef> Vote </th>
+          <td mat-cell *matCellDef="let element"> {{element.vote_average}} </td>
+        </ng-container>
+  
+      <ng-container matColumnDef="update">
+          <th mat-header-cell *matHeaderCellDef> Update </th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-icon-button class="update" (click)="update(element)">
+              <mat-icon>create</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+  
+  
+      <ng-container matColumnDef="remove">
+        <th mat-header-cell *matHeaderCellDef> Remove </th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button color="warn" (click)="remove(element)">
+            <mat-icon>delete</mat-icon>
           </button>
         </td>
       </ng-container>
-
-
-    <ng-container matColumnDef="remove">
-      <th mat-header-cell *matHeaderCellDef> Remove </th>
-      <td mat-cell *matCellDef="let element">
-        <button mat-icon-button color="warn" (click)="remove(element)">
-          <mat-icon>delete</mat-icon>
-        </button>
-      </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
-
-  <mat-paginator [pageSizeOptions]="[25, 50, 100]" showFirstLastButtons></mat-paginator>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[25, 50, 100]" showFirstLastButtons></mat-paginator>
+  </div>
 </div>
