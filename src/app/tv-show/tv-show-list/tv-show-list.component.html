@@ -1,10 +1,11 @@
 <div class="list">
   <div class="notifications">
+    <h2>Tv Shows List</h2>
     <h4 class="number"><span class="badge badge-danger">Tv Shows Finished : {{ tvShowsFinished }} </span></h4>
     <h4 class="number"><span class="badge badge-primary">Tv Shows Waiting : {{ tvShowsWaiting }} </span></h4>
     <h4 class="number"><span class="badge badge-warning">Tv Shows Watching : {{ tvShowsWatching }} </span></h4>
   </div>
-  <div class="mat-elevation-z8">
+  <div class="mat-elevation-z8 content">
     <table mat-table [dataSource]="dataSource">
   
       <ng-container matColumnDef="poster">
