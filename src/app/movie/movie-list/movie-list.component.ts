@@ -35,6 +35,7 @@ export class MovieListComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.size = 0;
     this.moviesService.getMovies().subscribe((res) => {
       this.movies = res;
       this.size = this.movies.length;

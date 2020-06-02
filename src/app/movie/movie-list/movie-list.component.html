@@ -1,6 +1,9 @@
 <div class="list"> 
-  <h4 class="number"><span class="badge badge-primary">Total movies : {{ size }} </span></h4>
-  <div class="mat-elevation-z8">
+  <div class="notifications">
+    <h2>Movies List</h2>
+    <h4 class="number"><span class="badge badge-primary">Total movies : {{ size }} </span></h4>
+  </div>
+  <div class="mat-elevation-z8 content">
     <table mat-table [dataSource]="dataSource">
   
       <ng-container matColumnDef="poster">
