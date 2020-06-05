@@ -28,10 +28,13 @@ import { TvShowSearchComponent } from './tv-show/tv-show-search/tv-show-search.c
 import { TvShowListComponent } from './tv-show/tv-show-list/tv-show-list.component';
 import {MatSelectModule} from '@angular/material/select';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { LoginComponent } from './login/login.component';
+import { AuthGuardService } from './services/auth-guard.service';
 
 const appRoutes: Routes = [
-  { path: 'movies', component: MovieListComponent },
-  { path: 'tv-shows', component: TvShowListComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'movies', canActivate: [AuthGuardService], component: MovieListComponent },
+  { path: 'tv-shows', canActivate: [AuthGuardService], component: TvShowListComponent },
   { path: 'search/movie', component: MovieSearchComponent },
   { path: 'search/tv-show', component: TvShowSearchComponent },
   { path: '', redirectTo: 'search/movie', pathMatch: 'full'},
@@ -49,6 +52,7 @@ const appRoutes: Routes = [
     MovieSearchComponent,
     SearchListComponent,
     TvShowSearchComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
