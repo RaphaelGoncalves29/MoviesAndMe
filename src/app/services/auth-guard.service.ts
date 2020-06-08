@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import firebase from '@firebase/app';
+import * as firebase from 'firebase';
 
 @Injectable({
   providedIn: 'root'
