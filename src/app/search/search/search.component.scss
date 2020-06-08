@@ -1,13 +1,14 @@
 .search {
-    display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    width: 70%;
+    margin: 0 auto;
   }
-  
-  button {
-    font-size: 22px;
-  }
-  
-  input+button {
+
+  mat-form-field + button {
     margin-left: 10px;
   }
-  
+
+  .example-full-width {
+    width: 85%;
+    margin-left: 15px;
+  }
