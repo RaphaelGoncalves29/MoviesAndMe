@@ -4,6 +4,7 @@ import { MoviesService } from 'src/app/services/movies.service';
 import { TvShowsService } from 'src/app/services/tv-shows.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { TvShow } from 'src/app/models/tvShow.models';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-search-list',
@@ -20,6 +21,8 @@ export class SearchListComponent implements OnInit {
   movieButton: boolean;
   tvButton : boolean;
 
+  isAuth: boolean;
+
   constructor(private moviesService: MoviesService,
     private tvShowsService: TvShowsService,
     private _snackBar: MatSnackBar,) { }
@@ -27,6 +30,16 @@ export class SearchListComponent implements OnInit {
   ngOnInit(): void {
     this.initMovieButton();
     this.initTvButton();
+
+    firebase.auth().onAuthStateChanged(
+      (user) => {
+        if(user) {
+          this.isAuth = true;
+        } else {
+          this.isAuth = false;
+        }
+      }
+    )
   }
 
   initMovieButton() {

@@ -28,7 +28,7 @@
                 <p>Oups, overview not found !</p>
             </ng-template>
         </div>
-        <div class="list-button">
+        <div class="list-button" *ngIf="isAuth">
             <button mat-raised-button color="primary" (click)="addMovie(movie)"
                 [disabled]="movieButton === false">Add</button>
         </div>
@@ -64,7 +64,7 @@
                 <p>Oups, overview not found !</p>
             </ng-template>
         </div>
-        <div class="list-button">
+        <div class="list-button" *ngIf="isAuth">
             <button mat-raised-button color="primary" (click)="addTvShow(tv)"
                 [disabled]="tvButton === false">Add</button>
         </div>
