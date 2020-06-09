@@ -7,6 +7,7 @@ import { TvShowsService } from "src/app/services/tv-shows.service";
 import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { DialogComponent } from "src/app/dialog/dialog.component";
+import { ExporterService } from 'src/app/services/exporter.service';
 
 @Component({
   selector: "app-tv-show-list",
@@ -41,6 +42,7 @@ export class TvShowListComponent implements OnInit {
 
   constructor(
     private tvShowsService: TvShowsService,
+    private exporterService: ExporterService,
     private _snackBar: MatSnackBar,
     public dialog: MatDialog
   ) {}
@@ -155,5 +157,9 @@ export class TvShowListComponent implements OnInit {
         });
       }
     });
+  }
+
+  exportAsXLSX(): void{
+    this.exporterService.exportToExcel(this.dataSource.data, 'tv-shows');
   }
 }

@@ -7,6 +7,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
 import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
 import { DialogComponent } from "src/app/dialog/dialog.component";
 import { MatSort } from "@angular/material/sort";
+import { ExporterService } from 'src/app/services/exporter.service';
 
 @Component({
   selector: "app-movie-list",
@@ -30,6 +31,7 @@ export class MovieListComponent implements OnInit {
 
   constructor(
     private moviesService: MoviesService,
+    private exporterService: ExporterService,
     private _snackBar: MatSnackBar,
     public dialog: MatDialog
   ) {}
@@ -70,5 +72,9 @@ export class MovieListComponent implements OnInit {
         this.openSnackBar("Movie removed !");
       }
     });
+  }
+
+  exportAsXLSX(): void{
+    this.exporterService.exportToExcel(this.dataSource.data, 'movies');
   }
 }
