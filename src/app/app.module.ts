@@ -30,6 +30,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { LoginComponent } from './login/login.component';
 import { AuthGuardService } from './services/auth-guard.service';
+import {MatInputModule} from '@angular/material/input';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -74,7 +75,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     MatIconModule,
     BrowserAnimationsModule,
-    MatSliderModule
+    MatSliderModule,
+    MatInputModule
   ],
   providers: [SearchService],
   bootstrap: [AppComponent]
