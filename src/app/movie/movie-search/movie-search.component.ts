@@ -20,8 +20,8 @@ export class MovieSearchComponent implements OnInit {
     this.isMovie = true;
 
     this.movieService.getMovies()
-      .subscribe((res) => { 
-        for(var i=0; i < res.length; i++){
+      .subscribe((res) => {
+        for ( let i = 0; i < res.length; i++ ) {
           this.moviesId.push(res[i].idMovie);
         }
       });

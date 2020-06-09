@@ -15,10 +15,10 @@ export class TvShowsService {
    addTvShow(tv: TvShow) {
     this.httpClient.post(this.url, tv).subscribe(
       () => {
-        console.log("Tv Show saved !");
+        console.log('Tv Show saved !');
       },
       (error) => {
-        console.log("Error : " + error);
+        console.log('Error : ' + error);
       }
     );
   }
@@ -27,13 +27,11 @@ export class TvShowsService {
     return this.httpClient.get<TvShow[]>(this.url);
   }
 
-  deleteTvShow(id: number): Observable<any>{
-    return this.httpClient.delete(this.url + id)
+  deleteTvShow(id: number): Observable<any> {
+    return this.httpClient.delete(this.url + id);
   }
 
   updateStatusTvShow(tv: TvShow): Observable<TvShow> {
-    return this.httpClient.put<TvShow>(this.url + tv.id, tv)
+    return this.httpClient.put<TvShow>(this.url + tv.id, tv);
   }
-
-   
 }

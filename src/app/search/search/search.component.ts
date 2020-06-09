@@ -18,7 +18,8 @@ export class SearchComponent implements OnInit {
   @Output() outputToParentTvShow = new EventEmitter<TvShow[]>();
 
 
-  constructor(private searchService: SearchService,
+  constructor(
+    private searchService: SearchService,
     private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
@@ -28,25 +29,25 @@ export class SearchComponent implements OnInit {
 
   initMovieForm() {
     this.movieForm = this.formBuilder.group({
-      title: ["", Validators.required],
+      title: ['', Validators.required],
     });
   }
 
   initTvForm() {
     this.tvForm = this.formBuilder.group({
-      title: ["", Validators.required],
+      title: ['', Validators.required],
     });
   }
 
   submitMovieForm() {
     const formValue = this.movieForm.value;
-    const movieSearch = formValue["title"];
+    const movieSearch = formValue['title'];
     this.outputToParentMovie.emit(movieSearch);
   }
 
   submitTvForm() {
     const formValue = this.tvForm.value;
-    const tvSearch = formValue["title"];
+    const tvSearch = formValue['title'];
     this.outputToParentTvShow.emit(tvSearch);
   }
 

@@ -6,5 +6,5 @@ export class TvShow {
     first_air_date: Date;
     poster_path: string;
     overview: string;
-    status: number
+    status: number;
 }

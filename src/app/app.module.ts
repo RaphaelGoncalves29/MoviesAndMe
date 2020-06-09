@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { Routes, RouterModule } from '@angular/router'
+import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchService } from './services/search.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -39,7 +39,7 @@ const appRoutes: Routes = [
   { path: 'search/movie', component: MovieSearchComponent },
   { path: 'search/tv-show', component: TvShowSearchComponent },
   { path: '', redirectTo: 'search/movie', pathMatch: 'full'},
-  { path: '**', redirectTo: "search/movie"}
+  { path: '**', redirectTo: 'search/movie'}
 ];
 
 @NgModule({

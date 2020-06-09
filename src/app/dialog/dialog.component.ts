@@ -1,12 +1,12 @@
-import { Component, OnInit, Optional, Inject } from "@angular/core";
-import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
-import { Movie } from "../models/movie.model";
-import { TvShow } from "../models/tvShow.models";
+import { Component, OnInit, Optional, Inject } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Movie } from '../models/movie.model';
+import { TvShow } from '../models/tvShow.models';
 
 @Component({
-  selector: "app-dialog",
-  templateUrl: "./dialog.component.html",
-  styleUrls: ["./dialog.component.scss"],
+  selector: 'app-dialog',
+  templateUrl: './dialog.component.html',
+  styleUrls: ['./dialog.component.scss'],
 })
 export class DialogComponent implements OnInit {
   myDropDown: string;

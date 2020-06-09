@@ -18,10 +18,10 @@ export class AuthService {
           (error) => {
             reject(error);
           }
-        )
+        );
       }
-    )
-  };
+    );
+  }
 
   signOutUser() {
     firebase.auth().signOut();

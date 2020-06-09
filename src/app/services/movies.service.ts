@@ -1,11 +1,10 @@
-import { Injectable } from "@angular/core";
-import { Movie } from "../models/movie.model";
-import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
-import { map } from "rxjs/operators";
+import { Injectable } from '@angular/core';
+import { Movie } from '../models/movie.model';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class MoviesService {
   url: any;
@@ -16,10 +15,10 @@ export class MoviesService {
   addMovie(movie: Movie) {
     this.httpClient.post(this.url, movie).subscribe(
       () => {
-        console.log("Movie saved !");
+        console.log('Movie saved !');
       },
       (error) => {
-        console.log("Error : " + error);
+        console.log('Error : ' + error);
       }
     );
   }
@@ -28,7 +27,7 @@ export class MoviesService {
     return this.httpClient.get<Movie[]>(this.url);
   }
 
-  deleteMovie(id: number): Observable<any>{
-    return this.httpClient.delete(this.url + id)
+  deleteMovie(id: number): Observable<any> {
+    return this.httpClient.delete(this.url + id);
   }
 }

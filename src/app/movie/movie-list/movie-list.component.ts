@@ -1,27 +1,26 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { Movie } from "src/app/models/movie.model";
-import { MoviesService } from "src/app/services/movies.service";
-import { MatPaginator } from "@angular/material/paginator";
-import { MatTableDataSource } from "@angular/material/table";
-import { MatSnackBar } from "@angular/material/snack-bar";
-import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
-import { DialogComponent } from "src/app/dialog/dialog.component";
-import { MatSort } from "@angular/material/sort";
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Movie } from 'src/app/models/movie.model';
+import { MoviesService } from 'src/app/services/movies.service';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { DialogComponent } from 'src/app/dialog/dialog.component';
 import { ExporterService } from 'src/app/services/exporter.service';
 
 @Component({
-  selector: "app-movie-list",
-  templateUrl: "./movie-list.component.html",
-  styleUrls: ["./movie-list.component.scss"],
+  selector: 'app-movie-list',
+  templateUrl: './movie-list.component.html',
+  styleUrls: ['./movie-list.component.scss'],
 })
 export class MovieListComponent implements OnInit {
   displayedColumns: string[] = [
-    "poster",
-    "title",
-    "originalTitle",
-    "date",
-    "vote",
-    "remove",
+    'poster',
+    'title',
+    'original_title',
+    'date',
+    'vote',
+    'remove',
   ];
   movies: Movie[];
   size: number;
@@ -32,7 +31,7 @@ export class MovieListComponent implements OnInit {
   constructor(
     private moviesService: MoviesService,
     private exporterService: ExporterService,
-    private _snackBar: MatSnackBar,
+    private snackBar: MatSnackBar,
     public dialog: MatDialog
   ) {}
 
@@ -47,10 +46,10 @@ export class MovieListComponent implements OnInit {
   }
 
   openSnackBar(item: string) {
-    this._snackBar.open(item, "Close", {
+    this.snackBar.open(item, 'Close', {
       duration: 3000,
-      horizontalPosition: "right",
-      verticalPosition: "bottom",
+      horizontalPosition: 'right',
+      verticalPosition: 'bottom',
     });
   }
 
@@ -69,12 +68,12 @@ export class MovieListComponent implements OnInit {
         this.dataSource = new MatTableDataSource<Movie>(this.dataSource.data);
         this.dataSource.paginator = this.paginator;
         this.size--;
-        this.openSnackBar("Movie removed !");
+        this.openSnackBar('Movie removed !');
       }
     });
   }
 
-  exportAsXLSX(): void{
+  exportAsXLSX(): void {
     this.exporterService.exportToExcel(this.dataSource.data, 'movies');
   }
 }

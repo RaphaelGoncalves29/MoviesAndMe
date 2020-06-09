@@ -17,14 +17,14 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     firebase.auth().onAuthStateChanged(
       (user) => {
-        if(user) {
+        if (user) {
           this.isAuth = true;
           this.userAuth = user.email;
         } else {
           this.isAuth = false;
         }
       }
-    )
+    );
   }
 
   logOut() {

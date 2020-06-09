@@ -19,13 +19,14 @@ export class SearchListComponent implements OnInit {
   @Input() tvShowsId = [];
 
   movieButton: boolean;
-  tvButton : boolean;
+  tvButton: boolean;
 
   isAuth: boolean;
 
-  constructor(private moviesService: MoviesService,
+  constructor(
+    private moviesService: MoviesService,
     private tvShowsService: TvShowsService,
-    private _snackBar: MatSnackBar,) { }
+    private snackBar: MatSnackBar) {}
 
   ngOnInit(): void {
     this.initMovieButton();
@@ -33,17 +34,17 @@ export class SearchListComponent implements OnInit {
 
     firebase.auth().onAuthStateChanged(
       (user) => {
-        if(user) {
+        if (user) {
           this.isAuth = true;
         } else {
           this.isAuth = false;
         }
       }
-    )
+    );
   }
 
   initMovieButton() {
-    for (var i = 0; i < this.moviesId.length; i++) {
+    for (let i = 0; i < this.moviesId.length; i++) {
       if (this.movie.id === this.moviesId[i]) {
         this.movieButton = false;
       }
@@ -51,7 +52,7 @@ export class SearchListComponent implements OnInit {
   }
 
   initTvButton() {
-    for (var i = 0; i < this.tvShowsId.length; i++) {
+    for (let i = 0; i < this.tvShowsId.length; i++) {
       if (this.tv.id === this.tvShowsId[i]) {
         this.tvButton = false;
       }
@@ -79,7 +80,7 @@ export class SearchListComponent implements OnInit {
     newTvShow.name = tvShow.name;
     newTvShow.poster_path = tvShow.poster_path;
     newTvShow.first_air_date = tvShow.first_air_date;
-    newTvShow.vote_average = tvShow.vote_average
+    newTvShow.vote_average = tvShow.vote_average;
     newTvShow.status = 0;
 
     this.tvShowsService.addTvShow(newTvShow);
@@ -89,10 +90,10 @@ export class SearchListComponent implements OnInit {
   }
 
   openSnackBar(item: string) {
-    this._snackBar.open(item ,"Close", {
+    this.snackBar.open(item , 'Close', {
       duration: 3000,
-      horizontalPosition: "right",
-      verticalPosition: "bottom",
+      horizontalPosition: 'right',
+      verticalPosition: 'bottom',
     });
   }
 

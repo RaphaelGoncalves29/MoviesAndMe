@@ -1,28 +1,27 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { TvShow } from "src/app/models/tvShow.models";
-import { MatSort } from "@angular/material/sort";
-import { MatPaginator } from "@angular/material/paginator";
-import { MatTableDataSource } from "@angular/material/table";
-import { TvShowsService } from "src/app/services/tv-shows.service";
-import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
-import { MatSnackBar } from "@angular/material/snack-bar";
-import { DialogComponent } from "src/app/dialog/dialog.component";
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { TvShow } from 'src/app/models/tvShow.models';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
+import { TvShowsService } from 'src/app/services/tv-shows.service';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { DialogComponent } from 'src/app/dialog/dialog.component';
 import { ExporterService } from 'src/app/services/exporter.service';
 
 @Component({
-  selector: "app-tv-show-list",
-  templateUrl: "./tv-show-list.component.html",
-  styleUrls: ["./tv-show-list.component.scss"],
+  selector: 'app-tv-show-list',
+  templateUrl: './tv-show-list.component.html',
+  styleUrls: ['./tv-show-list.component.scss'],
 })
 export class TvShowListComponent implements OnInit {
   displayedColumns: string[] = [
-    "poster",
-    "title",
-    "status",
-    "date",
-    "vote",
-    "update",
-    "remove",
+    'poster',
+    'title',
+    'status',
+    'date',
+    'vote',
+    'update',
+    'remove',
   ];
   tvShows: TvShow[];
 
@@ -73,10 +72,10 @@ export class TvShowListComponent implements OnInit {
   }
 
   openSnackBar(item: string) {
-    this._snackBar.open(item, "Close", {
+    this._snackBar.open(item, 'Close', {
       duration: 3000,
-      horizontalPosition: "right",
-      verticalPosition: "bottom",
+      horizontalPosition: 'right',
+      verticalPosition: 'bottom',
     });
   }
 
@@ -103,7 +102,7 @@ export class TvShowListComponent implements OnInit {
           case 3:
             this.tvShowsWatching--;
         }
-        this.openSnackBar("Tv Show removed !");
+        this.openSnackBar('Tv Show removed !');
       }
     });
   }
@@ -149,17 +148,17 @@ export class TvShowListComponent implements OnInit {
           } else if (this.tvWasWaiting) {
             this.tvShowsWaiting--;
             this.tvWasWaiting = false;
-          }else if (this.tvWasWatching) {
+          } else if (this.tvWasWatching) {
             this.tvShowsWatching--;
             this.tvWasWatching = false;
-          };
-          this.openSnackBar("Tv Show update !");
+          }
+          this.openSnackBar('Tv Show update !');
         });
       }
     });
   }
 
-  exportAsXLSX(): void{
+  exportAsXLSX(): void {
     this.exporterService.exportToExcel(this.dataSource.data, 'tv-shows');
   }
 }
