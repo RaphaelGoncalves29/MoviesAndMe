@@ -4202,6 +4202,96 @@
       "release_date": "2019-05-31",
       "vote_average": 7.5,
       "id": 467
+    },
+    {
+      "idMovie": 10201,
+      "title": "Yes Man",
+      "original_title": "Yes Man",
+      "poster_path": "/k0ezLeleYGfTMV4Fg08JsxFcBF8.jpg",
+      "release_date": "2008-12-09",
+      "vote_average": 6.6,
+      "id": 468
+    },
+    {
+      "idMovie": 27581,
+      "title": "Very Bad Cops",
+      "original_title": "The Other Guys",
+      "poster_path": "/e1JT8WFhNdfpYUGvFEXluWRbWyx.jpg",
+      "release_date": "2010-08-06",
+      "vote_average": 6.2,
+      "id": 469
+    },
+    {
+      "idMovie": 73861,
+      "title": "A Serbian Film",
+      "original_title": "Srpski film",
+      "poster_path": "/qT312t40YmlOSsOXOoOLDCvRbPx.jpg",
+      "release_date": "2010-06-16",
+      "vote_average": 5.5,
+      "id": 470
+    },
+    {
+      "idMovie": 530915,
+      "title": "1917",
+      "original_title": "1917",
+      "poster_path": "/zppHKKEkHg9ZGzOdzZwW8lZYYqy.jpg",
+      "release_date": "2019-12-25",
+      "vote_average": 7.9,
+      "id": 471
+    },
+    {
+      "idMovie": 60308,
+      "title": "Le Stratège",
+      "original_title": "Moneyball",
+      "poster_path": "/95LAlikFJHntzGYAMhizwxzHFhi.jpg",
+      "release_date": "2011-09-22",
+      "vote_average": 7.2,
+      "id": 472
+    },
+    {
+      "idMovie": 302699,
+      "title": "Agents presque secrets",
+      "original_title": "Central Intelligence",
+      "poster_path": "/9H16qIZllwWjUjgza8Auj2PgYi0.jpg",
+      "release_date": "2016-06-15",
+      "vote_average": 6.4,
+      "id": 473
+    },
+    {
+      "idMovie": 2034,
+      "title": "Training Day",
+      "original_title": "Training Day",
+      "poster_path": "/jaX3lwCY0lXfU9zObNFsaj0ygZ7.jpg",
+      "release_date": "2001-10-05",
+      "vote_average": 7.4,
+      "id": 474
+    },
+    {
+      "idMovie": 446021,
+      "title": "Sale temps à l'hôtel El Royale",
+      "original_title": "Bad Times at the El Royale",
+      "poster_path": "/rEJtCvo488PIhOmTumfQUDpB2wl.jpg",
+      "release_date": "2018-10-04",
+      "vote_average": 6.8,
+      "id": 475
+    },
+    {
+      "idMovie": 1359,
+      "title": "American Psycho",
+      "original_title": "American Psycho",
+      "poster_path": "/2DWqsx0vafGcfytSIwhtL5nI1uV.jpg",
+      "release_date": "2000-01-21",
+      "vote_average": 7.3,
+      "id": 476
+    },
+    {
+      "idMovie": 769,
+      "title": "Les Affranchis",
+      "original_title": "GoodFellas",
+      "poster_path": "/v4c6WMVqUlSJHMyjHNj72iTFGhm.jpg",
+      "release_date": "1990-09-12",
+      "vote_average": 8.4,
+      "id": 477
     }
   ],
   "tvShows": [
@@ -4472,7 +4562,7 @@
       "poster_path": "/cU0kAjGjA6d2XjBzJMUIEVKiGDb.jpg",
       "first_air_date": "2015-02-08",
       "vote_average": 8.2,
-      "status": 3,
+      "status": 2,
       "id": 30
     },
     {
@@ -4616,7 +4706,7 @@
       "poster_path": "/5LoHuHWA4H8jElFlZDvsmU2n63b.jpg",
       "first_air_date": "2017-12-01",
       "vote_average": 8.4,
-      "status": 2,
+      "status": 1,
       "id": 46
     },
     {
@@ -4625,7 +4715,7 @@
       "poster_path": "/8qc2cOqGiha24c43Qda5r85xGvd.jpg",
       "first_air_date": "2017-03-31",
       "vote_average": 7.6,
-      "status": 3,
+      "status": 1,
       "id": 47
     },
     {
@@ -4679,7 +4769,7 @@
       "poster_path": "/p6s2svEHHLsQ1TOw4Si54c1dD5L.jpg",
       "first_air_date": "2008-10-03",
       "vote_average": 8.1,
-      "status": 3,
+      "status": 1,
       "id": 53
     },
     {
@@ -4744,6 +4834,24 @@
       "vote_average": 4.8,
       "status": 0,
       "id": 60
+    },
+    {
+      "idTv": 60554,
+      "name": "Star Wars Rebels",
+      "poster_path": "/jmgR8330sKEJehr27rQ3bODnrlP.jpg",
+      "first_air_date": "2014-10-13",
+      "vote_average": 0,
+      "status": 3,
+      "id": 61
+    },
+    {
+      "idTv": 61986,
+      "name": "Bloodline",
+      "poster_path": "/cMY28CoOQDSVrYdPq9o2DHjIhRZ.jpg",
+      "first_air_date": "2015-03-20",
+      "vote_average": 7.4,
+      "status": 1,
+      "id": 62
     }
   ],
   "profile": {
